@@ -40,7 +40,7 @@ hc keybind $Mod-n spawn brightnessctl --device='tpacpi::kbd_backlight' set +1
 hc keybind $Mod-m spawn brightnessctl --device='tpacpi::kbd_backlight' set 1-
 
 # Tastaturbeleuchtung An/Aus Toggle auf Space-Bar
-hc keybind $Mod-space spawn brightnessctl --device="tpacpi::kbd_backlight" set 50%--
+hc keybind $Mod-y spawn brightnessctl --device="tpacpi::kbd_backlight" set 50%--
 
 # basic movement in tiling and floating mode
 # focusing clients
