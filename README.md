@@ -6,7 +6,7 @@ This is my HerbstluftWM Repository, this config Files are only tested on Arch Li
 
 ## HerbstluftWM
 
-To setup and lern about HerbstluftWM please visit their Website: https://herbstluftwm.org/
+To setup and lern about HerbstluftWM itself, please visit their Website: https://herbstluftwm.org/
 
 ## Dependencies
 
