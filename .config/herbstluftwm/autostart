@@ -10,9 +10,9 @@ hc emit_hook reload
 
 xsetroot -solid '#5A8E3A'
 
-setxkbmap de &
+setxkbmap de & #Change this to youre own layout
 
-xrandr --output eDP-1 --mode 2880x1800 --rate 60 --scale 0.67x0.67 --panning 1920x1188 &
+xrandr --output eDP-1 --mode 2880x1800 --rate 60 --scale 0.67x0.67 --panning 1920x1188 & #again, change this to youre own resolution 
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -229,7 +229,7 @@ polybar example &
 picom &
 
 # Wallpaper
-./setWallpaperScript.sh Bilder/higurashi112121.jpg
+./setWallpaperScript.sh #PathToPicture
 
 # unlock, just to be sure
 # hc unlock
