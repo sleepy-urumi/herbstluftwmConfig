@@ -30,6 +30,7 @@ To setup and lern about HerbstluftWM itself, please visit their Website: https:/
 * `udiskie`
 * `gnome-keyring`
 * `ttf-dejavu`
+* `betterlockscreen`
 
 ### Laptop exclusiv dependencies
 
@@ -52,7 +53,7 @@ cd ~
 ### Installation of the Dependencies
 You can use the following command to install all the dependencies(Yay is required for this step):
 ```
-yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu
+yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen
 ```
 If you are on an Laptop u should additionally install the "Laptop exclusive" dependencies with this command:
 ```
