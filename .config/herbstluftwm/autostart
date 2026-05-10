@@ -104,7 +104,7 @@ hc keybind $Mod-r remove
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
 hc keybind $Mod-Shift-f set_attr clients.focus.floating toggle
-hc keybind $Mod-Shift-d set_attr clients.focus.decorated toggle
+hc keybind $Mod-Shift-d set_attr clients.focus.decorateadd wallpaper.png and update wallpaper script for better automationd toggle
 hc keybind $Mod-Shift-m set_attr clients.focus.minimized true
 hc keybind $Mod-Control-m jumpto last-minimized
 hc keybind $Mod-p pseudotile toggle
@@ -229,7 +229,7 @@ polybar example &
 picom &
 
 # Wallpaper
-./setWallpaperScript.sh #PathToPicture
+./setWallpaperScript.sh ~/herbstluftwmConfig/wallpaper.png #replace this with an path to your own wallpaper, if needed
 
 # unlock, just to be sure
 # hc unlock
