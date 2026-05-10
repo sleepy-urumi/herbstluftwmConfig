@@ -14,6 +14,27 @@ To setup and lern about HerbstluftWM itself, please visit their Website: https:/
 * `fastfetch`
 * `polybar`
 * `rofi`
+* `pywal`
+* `feh`
+* 
+* `kitty`
+* `firefox`
+* `thunar`
+* `khal`
+* `xorg-xsetroot`
+* `xorg-setxkbmap`
+* `xorg-xrandr`
+* `arandr`
+* `brightnessctl`
+* `pamixer`
+* `udiskie`
+* `gnome-keyring`
+* `ttf-dejavu`
+
+### Laptop exclusiv dependencies
+
+* `tlp`
+* `tlp-rdw`
 
 ### AUR Helper (Yay)
 To install some dependencies you gotta need an Package Manager like Yay(Paru is also an option).
@@ -31,7 +52,11 @@ cd ~
 ### Installation of the Dependencies
 You can use the following command to install all the dependencies(Yay is required for this step):
 ```
-yay -S reversal-icon-theme-git fastfetch polybar rofi
+yay -S reversal-icon-theme-git fastfetch polybar rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu
+```
+If you are on an Laptop u should additionally install the "Laptop exclusive" dependencies with this command:
+```
+yay -S tlp tlp-rdw
 ```
 
 ## Credits
