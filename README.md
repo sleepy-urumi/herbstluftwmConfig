@@ -90,7 +90,7 @@ The default Modifier key is `Mod4` (Super/Windows Key).
 
 ### System Control
 * `Mod` + `n` / `m` — Increase/Decrease Keyboard Backlight
-* `Mod` + `space` — Toggle Keyboard Backlight (50%)
+* `Mod` + `y` — Toggle Keyboard Backlight (50%)
 * `F-Keys` — Control Brightness and Volume (via `brightnessctl` and `pamixer`)
 
 ### Mouse
