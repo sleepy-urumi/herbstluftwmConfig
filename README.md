@@ -8,6 +8,9 @@ This is my HerbstluftWM Repository, this config Files are only tested on Arch Li
 
 To setup and lern about HerbstluftWM itself, please visit their Website: https://herbstluftwm.org/
 
+## How to clone my repo
+git clone https://github.com ~/herbstluftwmConfig
+
 ## Dependencies
 
 * `reversal-icon-theme-git`
@@ -31,6 +34,7 @@ To setup and lern about HerbstluftWM itself, please visit their Website: https:/
 * `gnome-keyring`
 * `ttf-dejavu`
 * `betterlockscreen`
+* `i3lock-color`
 
 ### Laptop exclusiv dependencies
 
@@ -53,13 +57,29 @@ cd ~
 ### Installation of the Dependencies
 You can use the following command to install all the dependencies(Yay is required for this step):
 ```
-yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen
+yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen i3lock-color
 ```
+Activate everything:
+```
+systemctl --user enable --now gnome-keyring.service
+mkdir -p ~/.config/kitty
+echo "allow_remote_control yes" >> ~/.config/kitty/kitty.conf
+echo "listen_on unix:/tmp/mykitty" >> ~/.config/kitty/kitty.conf
+sudo systemctl enable betterlockscreen@$USER.service
+cd ~/herbstluftwmConfig
+chmod +x setWallpaperScript.sh
+./setWallpaperScript.sh wallpaper.png
+cd ~
+```
+
 If you are on an Laptop u should additionally install the "Laptop exclusive" dependencies with this command:
 ```
 yay -S tlp tlp-rdw
 sudo systemctl enable --now tlp
 ```
+
+## Wallpaper
+The wallpaper included in this repo is from wallhaven.cc. All rights belong to the original artist. Here you can find the original: https://whvn.cc/e8xyjo
 
 ## Keybinds
 
