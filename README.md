@@ -9,7 +9,7 @@ This is my HerbstluftWM Repository, this config Files are only tested on Arch Li
 To setup and lern about HerbstluftWM itself, please visit their Website: https://herbstluftwm.org/
 
 ## How to clone my repo
-git clone https://github.com ~/herbstluftwmConfig
+git clone https://github.com/sleepy-urumi/herbstluftwmConfig/tree/main ~/herbstluftwmConfig
 
 ## Dependencies
 
