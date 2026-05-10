@@ -16,7 +16,6 @@ To setup and lern about HerbstluftWM itself, please visit their Website: https:/
 * `rofi`
 * `pywal`
 * `feh`
-* 
 * `kitty`
 * `firefox`
 * `thunar`
@@ -57,6 +56,7 @@ yay -S reversal-icon-theme-git fastfetch polybar rofi python-pywal feh kitty fir
 If you are on an Laptop u should additionally install the "Laptop exclusive" dependencies with this command:
 ```
 yay -S tlp tlp-rdw
+sudo systemctl enable --now tlp
 ```
 
 ## Credits
