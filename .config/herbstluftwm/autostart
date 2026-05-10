@@ -31,7 +31,7 @@ hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xter
 hc keybind $Mod-d spawn rofi -show drun
 hc keybind $Mod-b spawn firefox
 hc keybind $Mod-e spawn thunar
-hc keybind $Mod-k khal interactive
+hc keybind $Mod-i khal interactive
 
 # Tastaturbeleuchtung erhöhen
 hc keybind $Mod-n spawn brightnessctl --device='tpacpi::kbd_backlight' set +1
