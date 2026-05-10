@@ -60,6 +60,44 @@ yay -S tlp tlp-rdw
 sudo systemctl enable --now tlp
 ```
 
+## Keybinds
+
+The default Modifier key is `Mod4` (Super/Windows Key).
+
+### General
+* `Mod` + `Return` — Open Terminal (kitty)
+* `Mod` + `d` — Open App Launcher (Rofi)
+* `Mod` + `b` — Open Firefox
+* `Mod` + `e` — Open File Manager (Thunar)
+* `Mod` + `i` — Open Calendar (khal)
+* `Mod` + `q` — Close focused window
+* `Mod` + `Shift` + `r` — Reload HerbstluftWM
+* `Mod` + `Shift` + `q` — Quit HerbstluftWM
+
+### Navigation & Layout
+* `Mod` + `Arrows` or `h`/`j`/`k`/`l` — Focus window in that direction
+* `Mod` + `Shift` + `Arrows` or `h`/`j`/`k`/`l` — Move window in that direction
+* `Mod` + `u` — Split frame horizontally (bottom)
+* `Mod` + `o` — Split frame vertically (right)
+* `Mod` + `f` — Toggle Fullscreen
+* `Mod` + `s` — Toggle Floating mode
+* `Mod` + `space` — Cycle through layouts
+
+### Workspaces (Tags)
+* `Mod` + `1-9` — Switch to tag 1-9
+* `Mod` + `Shift` + `1-9` — Move window to tag 1-9
+* `Mod` + `.` / `,` — Cycle through tags
+
+### System Control
+* `Mod` + `n` / `m` — Increase/Decrease Keyboard Backlight
+* `Mod` + `space` — Toggle Keyboard Backlight (50%)
+* `F-Keys` — Control Brightness and Volume (via `brightnessctl` and `pamixer`)
+
+### Mouse
+* `Mod` + `Left Click` — Move window
+* `Mod` + `Right Click` — Resize window
+* `Mod` + `Middle Click` — Zoom window
+
 ## Credits
 A big thanks to the creators of the tools and configs I use:
 
