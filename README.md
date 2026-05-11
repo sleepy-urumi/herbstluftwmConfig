@@ -40,6 +40,7 @@ git clone https://github.com/sleepy-urumi/herbstluftwmConfig ~/herbstluftwmConfi
 * `ttf-dejavu`
 * `betterlockscreen`
 * `i3lock-color`
+* `ufw`
 
 ### Laptop exclusiv dependencies
 
@@ -62,7 +63,7 @@ cd ~
 ### Installation of the Dependencies
 You can use the following command to install all the dependencies(Yay is required for this step):
 ```
-yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen i3lock-color
+yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen i3lock-color ufw
 ```
 Activate everything:
 ```
@@ -75,6 +76,11 @@ cd ~/herbstluftwmConfig
 chmod +x setWallpaperScript.sh
 ./setWallpaperScript.sh wallpaper.png
 cd ~
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw enable
+sudo systemctl enable ufw.service
 ```
 
 If you are on an Laptop u should additionally install the "Laptop exclusive" dependencies with this command:
