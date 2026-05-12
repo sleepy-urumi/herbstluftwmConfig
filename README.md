@@ -41,6 +41,7 @@ git clone https://github.com/sleepy-urumi/herbstluftwmConfig ~/herbstluftwmConfi
 * `betterlockscreen`
 * `i3lock-color`
 * `ufw`
+* `ttf-rubik`
 
 ### Laptop exclusiv dependencies
 
@@ -63,7 +64,7 @@ cd ~
 ### Installation of the Dependencies
 You can use the following command to install all the dependencies(Yay is required for this step):
 ```
-yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen i3lock-color ufw
+yay -S reversal-icon-theme-git fastfetch polybar picom rofi python-pywal feh kitty firefox thunar khal xorg-xsetroot xorg-setxkmap xorg-xrandr arandr brightnessctl pamixer udiskie gnome-keyring ttf-dejavu betterlockscreen i3lock-color ufw ttf-rubik
 ```
 Activate everything:
 ```
