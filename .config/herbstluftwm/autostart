@@ -10,11 +10,12 @@ hc emit_hook reload
 
 xsetroot -solid '#5A8E3A'
 
+xhost +local:
+
 setxkbmap de & #Change this to youre own layout
 
 xrandr --output eDP-1 --mode 2880x1800 --rate 60 --scale 0.67x0.67 --panning 1920x1188 & #again, change this to youre own resolution 
 
-# remove all existing keybindings
 hc keyunbind --all
 
 # keybindings
@@ -29,18 +30,10 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
 hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-d spawn rofi -show drun
-hc keybind $Mod-b spawn firefox
-hc keybind $Mod-e spawn thunar
+hc keybind $Mod-b spawn /home/fuest/.local/opt/floorp/floorp
+hc keybind $Mod-e spawn pcmanfm
 hc keybind $Mod-i khal interactive
-
-# Tastaturbeleuchtung erhöhen
-hc keybind $Mod-n spawn brightnessctl --device='tpacpi::kbd_backlight' set +1
-
-# Tastaturbeleuchtung ernidrigen
-hc keybind $Mod-m spawn brightnessctl --device='tpacpi::kbd_backlight' set 1-
-
-# Tastaturbeleuchtung An/Aus Toggle auf Space-Bar
-hc keybind $Mod-y spawn brightnessctl --device="tpacpi::kbd_backlight" set 50%--
+hc keybind $Mod-x spawn /home/fuest/.local/bin/sys-suspend.sh
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -145,8 +138,9 @@ hc attr theme.floating.reset 1
 hc set frame_border_active_color '#222222cc'
 hc set frame_border_normal_color '#101010cc'
 hc set frame_bg_normal_color '#565656aa'
-hc set frame_bg_active_color '#345F0Caa'
-hc set frame_border_width 1
+ hc set frame_bg_active_color '#345F0Caa'
+# hc set frame_border_width 1
+hc set frame_border_width 0
 hc set show_frame_decorations 'focused_if_multiple'
 hc set frame_bg_transparent on
 hc set frame_transparent_width 5
@@ -154,7 +148,8 @@ hc set frame_gap 4
 
 hc attr theme.title_height 15
 hc attr theme.title_when always
-hc attr theme.title_font 'Dejavu Sans:pixelsize=12'  # example using Xft
+#hc attr theme.title_font 'Dejavu Sans:pixelsize=12'  # example using Xft
+hc attr theme.title_font 'San Francisco:pixelsize=12'
 # hc attr theme.title_font '-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 hc attr theme.title_depth 3  # space below the title's baseline
 hc attr theme.active.color '#345F0Cef'
@@ -162,17 +157,23 @@ hc attr theme.title_color '#ffffff'
 hc attr theme.normal.color '#323232dd'
 hc attr theme.urgent.color '#7811A1dd'
 hc attr theme.tab_color '#1F1F1Fdd'
-hc attr theme.active.tab_color '#2B4F0Add'
+# hc attr theme.active.tab_color '#2B4F0Add'
+hc attr theme.active.tab_color '#2D0A4F'
 hc attr theme.active.tab_outer_color '#6C8257dd'
 hc attr theme.active.tab_title_color '#ababab'
 hc attr theme.normal.title_color '#898989'
-hc attr theme.inner_width 1
+# hc attr theme.inner_width 1
+hc attr theme.inner_width 0
 hc attr theme.inner_color black
-hc attr theme.border_width 3
-hc attr theme.floating.border_width 4
-hc attr theme.floating.outer_width 1
+# hc attr theme.border_width 3
+hc attr theme.border_width 0
+# hc attr theme.floating.border_width 4
+hc attr theme.floating.border_width 0
+# hc attr theme.floating.outer_width 1
+hc attr theme.floating.outer_width 0
 hc attr theme.floating.outer_color black
-hc attr theme.active.inner_color '#789161'
+# hc attr theme.active.inner_color '#789161'
+hc attr theme.active.inner_color '#784FC2'
 hc attr theme.urgent.inner_color '#9A65B0'
 hc attr theme.normal.inner_color '#606060'
 # copy inner color to outer_color
@@ -180,14 +181,16 @@ for state in active urgent normal ; do
     hc substitute C theme.${state}.inner_color \
         attr theme.${state}.outer_color C
 done
-hc attr theme.tiling.outer_width 1
+hc attr theme.tiling.outer_width 0
 hc attr theme.background_color '#141414'
 
-hc set window_gap 0
+hc set window_gap 2
 hc set frame_padding 0
-hc set smart_window_surroundings off
-hc set smart_frame_surroundings on
+hc set smart_window_surroundings on
+# hc set smart_frame_surroundings on
+hc set smart_frame_surroundings hide_gaps
 hc set mouse_recenter_gap 0
+hc set window_border_width 2
 
 # rules
 hc unrule -F
@@ -216,20 +219,20 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 
 
 # start tlp
-sudo tlp power-saver
+sudo tlp start
 
 # Automaticly mount drives
 udiskie &
 
 # Polybar
 killall -q polybar
-polybar example &
+polybar top &
 
 # Start picom(compositor)
 picom &
 
 # Wallpaper
-./setWallpaperScript.sh ~/herbstluftwmConfig/wallpaper.png #replace this with an path to your own wallpaper, if needed
+feh --bg-fill ~/herbstluftwmConfig/wallpaper.png
 
 # unlock, just to be sure
 # hc unlock
@@ -239,6 +242,12 @@ picom &
 # or simply:
 # xrandr --output eDP-1 --mode 2880x1800 --rate 60 --scale 0.6x0.6 --panning 1920x1080 &
 hc detect_monitors
+
+# Sound-Server starten
+gentoo-pipewire-launcher &
+
+# Bluetooth starten
+blueman-applet &
 
 (
 sleep 1
